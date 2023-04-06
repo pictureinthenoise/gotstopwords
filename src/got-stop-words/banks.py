@@ -1,0 +1,1 @@
+BANKS = ["nltk", "other"]
