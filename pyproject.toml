@@ -14,8 +14,8 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = ""
-"Bug Tracker" = ""
+"Homepage" = "https://github.com/pictureinthenoise/got-stop-words"
+"Bug Tracker" = "https://github.com/pictureinthenoise/got-stop-words/issues"
 
 [build-system]
 requires = ["hatchling"]
