@@ -1,8 +1,6 @@
-# Got Stop Words
+## Got Stop Words
 
-## Introduction
-
-This Python package makes it easy to use **stop words** lists in Python projects. The set of lists contained within the package reflect an organization of lists collected across the Internet. Lists are available for **36 unique languages**, with multiple lists available for a number of languages including English, Spanish and Hindi. As expected, different lists for the same language have different, albeit overlapping, sets of words. Lists are divided into two banks:
+Python package that makes it easy to use **stop words** lists in Python projects. The set of lists contained within the package reflect an organization of lists collected across the Internet. Lists are available for **36 unique languages**, with multiple lists available for a number of languages including English, Spanish and Hindi. As expected, different lists for the same language have different, albeit overlapping, sets of words. Lists are divided into two banks:
 
 1. `nltk`: These stop words lists are sourced from the [Natural Language Toolkit website](https://www.nltk.org/).
 2. `other`: This is a collection of stop words lists gathered from various sources.
