@@ -1,4 +1,4 @@
-LANGS = {"ar": "arabic",
+CODES = {"ar": "arabic",
          "az": "azerbaijani",
          "bg": "bulgarian",
          "bn": "bengali",

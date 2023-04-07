@@ -1,8 +1,9 @@
 import os
 from typing import Any
-import config
-from banks import BANKS
-from codes import LANGS
+from gotstopwords.iso6391codes import CODES
+
+BANKS = ["nltk", "other"]
+DATA_PATH = "./src/gotstopwords/data/"
 
 def input_to_lower(string: str) -> str:
     '''
@@ -27,7 +28,7 @@ def get_iso_639_1_code(lang: str) -> str:
     @raise none
     '''
     try:
-        _code = list(LANGS.keys())[list(LANGS.values()).index(lang)]
+        _code = list(CODES.keys())[list(CODES.values()).index(lang)]
         return _code
     except:
         return ""
@@ -42,7 +43,7 @@ def get_lang_name_with_iso_639_1_code(code: str) -> str:
     @raise none
     '''    
     try:
-        _name = list(LANGS.values())[list(LANGS.keys()).index(code)]
+        _name = list(CODES.values())[list(CODES.keys()).index(code)]
         return _name
     except:
         return ""
@@ -88,7 +89,7 @@ def validate_inputs(inputs: dict) -> bool:
     @return {bool} _: True if inputs are valid; False otherwise.
     @raise none
     '''
-    if (inputs["bank"] in BANKS) and (inputs["lang"] in list(LANGS.values())):
+    if (inputs["bank"] in BANKS) and (inputs["lang"] in list(CODES.values())):
         return True
     else:
         return False
@@ -122,18 +123,16 @@ def load(bank: str, lang: str, list_num: Any = None) -> list:
         else:
             _file = _inputs["lang"] + _inputs["list_num"]
         
-        _full_path = config.DATA_PATH + _inputs["bank"] + "/" + _file
+        _full_path = DATA_PATH + _inputs["bank"] + "/" + _file
 
         if os.path.isfile(_full_path):
             try:
-                with open (config.DATA_PATH + _inputs["bank"] + "/" + _file, "r", encoding="utf-8") as f:
+                with open (_full_path, "r", encoding="utf-8") as f:
                     _data = f.read()
                 _stop_words = _data.split("\n")
             
                 _stop_words = sanitize_list(_stop_words)
             except Exception as e:
-                print("Exception occurred when trying to load stop words list using supplied inputs: ", e)
-        else:
-            print("No stop words list exists using supplied inputs.")
+                print(e)
 
     return _stop_words

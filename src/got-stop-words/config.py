@@ -1,1 +1,0 @@
-DATA_PATH = "./src/got-stop-words/data/"

@@ -10,9 +10,9 @@ Python package that makes it easy to use **stop words** lists in Python projects
 | `nltk` | 29 | 29 |
 | `other` | 27 | 25 |
 
-As mentioned above, there are stop words lists available for 35 unique languages across both banks.
+As mentioned, there are lists for 36 unique languages across *both* banks.
 
-## `nltk` Available Languages
+## `nltk` Bank Available Languages
 
 29 stop words lists for 29 unique languages are available in the `nltk` bank.
 
@@ -46,7 +46,7 @@ As mentioned above, there are stop words lists available for 35 unique languages
 * Tajik
 * Turkish
 
-## `other` Available Languages
+## `other` Bank Available Languages
 
 27 stop words lists for 25 unique languages are available in the `other` bank.
 
@@ -81,43 +81,78 @@ As mentioned above, there are stop words lists available for 35 unique languages
 ## Installation
 
 ```
-pip install got-stop-words
-```
-
-```python
-from got-stop-words import got-stop-words
+pip install gotstopwords
 ```
 
 ## Usage
 
+### Importing the Package
+
+```python
+from gotstopwords import gotstopwords
+```
+
+### `load` Method
+
 The `load` method is used to load a stop words list with the following parameters:
 
 * `bank`: The name of the list's bank, `nltk` or `other`.
-* `lang`: The name of the language as spelled in English, e.g. `norwegian`, *or* the language's two-letter ISO 639-1 code. See below for a table of ISO-639-1 codes.
-* `list_num`: The number of the desired list for those languages with more than 1 list in a bank, such as Hindi and Polish in the `other` bank. The `list_num` parameter can be omitted for those languages with only a single list. If the `list_num` parameter is omitted for those languages with multiple lists, the first list is returned.
+* `lang`: The name of the language as spelled in English, e.g. `norwegian`, *or* the language's two-letter ISO 639-1 code. See below for a table of ISO 639-1 codes.
+* `list_num`: The number of the desired list for those languages with more than 1 list in a bank, such as Hindi and Polish in the `other` bank. The `list_num` parameter can be omitted for those languages with only a single list.
 
-**Example:** Loading the stop words list for Finnish from the `nltk` bank.
+### Examples
+
+* Loading the stop words list for Finnish, ISO 639-1 code `fi`, from the `nltk` bank.
 
 ```python
-fi-stop-words = got-stop-words.load("nltk", "fi")
+_finnish = gotstopwords.load("nltk", "fi")
 
 # or
 
-fi-stop-words = got-stop-words.load("nltk", "finnish")
+_finnish = gotstopwords.load("nltk", "finnish")
 ```
 
-**Example:** Loading the stop words list for Hindi from the `other` bank.
+* Loading the stop words list for Spanish, ISO 639-1 code `es`, from the `nltk` bank.
 
 ```python
-hi-stop-words = got-stop-words.load("other", "hi", "1")
+_spanish = gotstopwords.load("nltk", "es")
 
 # or
 
-hi-stop-words = got-stop-words.load("other", "hindi", "1")
+_spanish = gotstopwords.load("nltk", "spanish")
 ```
 
-Stop words lists are returned as a Python list.
+* Loading the stop words list for English, ISO 639-1 code `en`, from the `other` bank.
 
+```python
+_english = gotstopwords.load("other", "en")
+
+# or
+
+_english = gotstopwords.load("other", "english")
+```
+
+* Loading the first stop words list for Hindi, ISO 639-1 code `hi`, from the `other` bank.
+
+```python
+_hindi1 = gotstopwords.load("other", "hi", "1")
+
+# or
+
+_hindi1 = gotstopwords.load("other", "hindi", "1")
+
+# or
+
+_hindi1 = gotstopwords.load("other", "hi", 1)
+
+# or
+
+_hindi1 = gotstopwords.load("other", "hindi", 1)
+```
+
+Stop words lists are returned as a Python list. If there is no stop words list associated with the values that are input, an empty list will be returned.
+
+> **Note:** Bank and language names can also be entered with capital letters if desired.  
 
 ## ISO 639-1 Language Codes
 

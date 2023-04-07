@@ -1,10 +1,10 @@
 [project]
-name = "stop-words-lists-for-python-nlp"
-version = "1.0"
+name = "gotstopwords"
+version = "1.0.6"
 authors = [
   { name="Picture In The Noise", email="pictureinthenoise@protonmail.com" },
 ]
-description = "Python package that simplifies the use of stop word lists in multiple languages."
+description = "Package that simplifies the use of stop words lists with Python NLP projects in 36 languages."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -14,8 +14,8 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pictureinthenoise/got-stop-words"
-"Bug Tracker" = "https://github.com/pictureinthenoise/got-stop-words/issues"
+"Homepage" = "https://github.com/pictureinthenoise/gotstopwords"
+"Bug Tracker" = "https://github.com/pictureinthenoise/gotstopwords/issues"
 
 [build-system]
 requires = ["hatchling"]
