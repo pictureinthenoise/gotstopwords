@@ -1,8 +1,8 @@
 [project]
 name = "gotstopwords"
-version = "1.0.6"
+version = "1.0.7"
 authors = [
-  { name="Picture In The Noise", email="pictureinthenoise@protonmail.com" },
+  { name="pictureinthenoise", email="pictureinthenoise@protonmail.com" },
 ]
 description = "Package that simplifies the use of stop words lists with Python NLP projects in 36 languages."
 readme = "README.md"

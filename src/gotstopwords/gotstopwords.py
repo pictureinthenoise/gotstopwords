@@ -3,7 +3,7 @@ from typing import Any
 from gotstopwords.iso6391codes import CODES
 
 BANKS = ["nltk", "other"]
-DATA_PATH = "./src/gotstopwords/data/"
+# DATA_PATH = "./src/gotstopwords/data/"
 
 def input_to_lower(string: str) -> str:
     '''
@@ -123,6 +123,7 @@ def load(bank: str, lang: str, list_num: Any = None) -> list:
         else:
             _file = _inputs["lang"] + _inputs["list_num"]
         
+        DATA_PATH = __file__.replace("gotstopwords.py", "data/")
         _full_path = DATA_PATH + _inputs["bank"] + "/" + _file
 
         if os.path.isfile(_full_path):
